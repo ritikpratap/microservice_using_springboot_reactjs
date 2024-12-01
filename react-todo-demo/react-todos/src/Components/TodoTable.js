@@ -11,24 +11,22 @@ function TodoTable(props) {
               </tr>
             </thead>
             <thead>
-              <TodoRowItem
-                rowNumber = {props.todos[0].rowNumber}
-                rowDescription = {props.todos[0].rowDescription}
-                assignedTo = {props.todos[0].assignedTo}
-              />
-              <TodoRowItem
-                rowNumber = {props.todos[1].rowNumber}
-                rowDescription = {props.todos[1].rowDescription}
-                assignedTo = {props.todos[1].assignedTo}
-              />
-              <TodoRowItem
-                rowNumber = {props.todos[2].rowNumber}
-                rowDescription = {props.todos[2].rowDescription}
-                assignedTo = {props.todos[2].assignedTo}
-              />
+            {/* 
+                adding below code to render all items in todos rather than doing it manually for each item.
+                map function in javaScript is similar as forEach loop Java
+            */}
+
+              {props.todos.map(todo =>(
+                <TodoRowItem 
+                    rowNumber = {todo.rowNumber}
+                    rowDescription = {todo.rowDescription}
+                    assignedTo = {todo.assignedTo}
+                    />
+                  )
+                )
+              }
             </thead>
           </table>
-
     )
 }
 
