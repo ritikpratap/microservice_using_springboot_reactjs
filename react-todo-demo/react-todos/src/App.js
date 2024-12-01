@@ -1,14 +1,16 @@
 import logo from './logo.svg';
+import React, { useState } from 'react'; // required to use hooks eg. useState
 import './App.css';
 import TodoTable from './Components/TodoTable';
 
 function App() {
-  const todos = [
+  // setting state by using useState to render all the elements in todos
+  const [todos, setTodos] = useState([
     {rowNumber : 1, rowDescription : "Learn React", assignedTo : "Ritik"},
     {rowNumber : 2, rowDescription : "Learn Microservices", assignedTo : "Ritik"},
     {rowNumber : 3, rowDescription : "Make a Project", assignedTo : "Ritik"},
     {rowNumber : 4, rowDescription : "Swith company", assignedTo : "Ritik"}
-  ]
+  ])
 
 // created onClick Event Listener to call addNewTodo function
   const addNewTodo = () => {
@@ -18,8 +20,8 @@ function App() {
         rowDescription : "New Todo",
         assignedTo : "New User"
       }
-      todos.push(newTodo)
-      console.log(todos)
+      // destructuring the current todos arrays and adding newTodo element
+      setTodos(todos => [...todos, newTodo])
     }
   }
 
