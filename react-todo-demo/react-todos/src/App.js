@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React, { useState } from 'react'; // required to use hooks eg. useState
 import './App.css';
 import TodoTable from './Components/TodoTable';
+import NewTodoForm from './Components/NewTodoForm';
 
 function App() {
   // setting state by using useState to render all the elements in todos
@@ -39,6 +40,7 @@ function App() {
           <button className="btn btn-primary" onClick={addNewTodo}>
             Add Todo
           </button>
+          <NewTodoForm/>
         </div>
         <button></button>
       </div>
